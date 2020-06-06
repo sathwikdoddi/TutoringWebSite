@@ -41,7 +41,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
-    background: #f1f1f1;
+    background: #d3d3d3;
     margin-bottom: 3rem;
 } .card h3 {
     margin-bottom: 2rem;
@@ -49,11 +49,13 @@
     padding: 2rem;
 } .btn {
     display: inline-block;
-    background: #000;
-    color: #fff;
+    background: linear-gradient(90deg, #ff0000, #000000);
+    color: rgb(255, 255, 255);
     padding: 0.8rem 1.8rem;
     margin-top: 2rem;
     cursor: pointer;
+    overflow: hidden;
+    border-radius: 40px;
 } @media(max-width: 700px) {
     .card {
         display: block;
@@ -61,6 +63,42 @@
 } footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-color: #ff3b3b;
+    background-color: #c62121;
     text-align: center;
+} ::-webkit-scrollbar {
+    width: 0;
+} #scrollPath {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+} #progressbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to top, #000000, #ff0000);
+    animation: animate 5s linear infinite;
+} 
+ #progressbar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #ff0000, #ff0000);
+    filter: blur(10px);
+} #progressbar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #000000, #ff0000);
+    filter: blur(20px);
 }
